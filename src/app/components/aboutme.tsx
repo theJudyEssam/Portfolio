@@ -57,6 +57,10 @@ export default function AboutMe(){
                 Oh! And I am currently a member of the Autonomous Car division in my university's Formula team.
             </p>
             <Separator my="3" size="4" />
+
+            <div>
+                <h1>Follow Me!</h1>
+            </div>
         </div>
         
         <div className="lg:w-1/2 w-full">

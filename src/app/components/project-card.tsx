@@ -1,3 +1,7 @@
+
+import {Flex,Box, Link, Card, Text } from "@radix-ui/themes"
+
+
 interface projectProps{
     title: string,
     description: string, 
@@ -5,15 +9,32 @@ interface projectProps{
 }
 
 
+
 export default function Projectcard(props: projectProps){
-               {/* From Uiverse.io by Uncannypotato69 */}
 
 
-               return (<div
-                className="h-[16em] w-[18em] border-2 border-green-600 rounded-[1.5em]  text-white font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] "
-              >
-                
-              </div>)
+               return (
+              
+
+
+                <Box width="500px">
+              <Card size="3">
+                <Flex gap="4" align="center">
+                  <Box>
+                    <Link href={props.link}><Text as="div" size="4" weight="bold">
+                      {props.title}
+                    </Text></Link>
+                    
+                    <Text as="div" size="4" color="gray">
+                      {props.description}
+                    </Text>
+                  </Box>
+                </Flex>
+              </Card>
+            </Box>
+
+              
+             )
 
 
 }
