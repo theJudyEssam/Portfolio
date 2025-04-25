@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Skill from './skill-column'
-import { Separator } from '@radix-ui/themes';
+import { Separator, Blockquote } from '@radix-ui/themes';
+import Socialmedias from './social-media';
 
 
 const skillsData = [
@@ -57,10 +58,12 @@ export default function AboutMe(){
                 Oh! And I am currently a member of the Autonomous Car division in my university's Formula team.
             </p>
             <Separator my="3" size="4" />
+            <Blockquote>
+	In my free time, I enjoy pottery, reading, and watching video essays on random topics!
+        </Blockquote>
 
-            <div>
-                <h1>Follow Me!</h1>
-            </div>
+
+          
         </div>
         
         <div className="lg:w-1/2 w-full">

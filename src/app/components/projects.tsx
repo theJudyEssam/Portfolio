@@ -51,16 +51,16 @@ export default function Projects(){
         <div>
             <h1 className=" text-[36px]  py-[2rem] text-Blue3 font-bold underline sm:p-[2rem]">My Projects</h1>
 
-
-            <Grid columns="3" gap="4" rows="repeat(2, 200px)" width="auto" className="p-[1rem]">
-                {projectsData.map((project) => (
-                        <Projectcard
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+                        {projectsData.map((project) => (
+                            <Projectcard
+                            key={project.title}
                             title={project.title}
                             description={project.description}
                             link={project.link}
-                        />
-                    ))}
-            </Grid>
+                            />
+                        ))}
+                        </div>
 
         </div>
     )
