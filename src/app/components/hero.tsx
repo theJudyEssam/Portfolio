@@ -70,21 +70,23 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <motion.button 
-                className="px-8 py-3 bg-white text-Blue3 hover:bg-gray-100 transition-all duration-300 font-bold rounded-full shadow-md hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsContactOpen(true)}
-              >
-                Contact Me
-              </motion.button>
-              <motion.button 
+                <motion.button 
                 className="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-Blue3 transition-all duration-300 font-bold rounded-full shadow-md hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-              >
+                onClick={() => window.open('https://drive.google.com/file/d/1ZZ84SWwgJQLUZMZqgmjshE6cIF9y2ZPd/view?usp=drive_link', '_blank')}
+                >
                 My Resume
-              </motion.button>
+                </motion.button>
+
+                  <motion.button 
+                    className="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-Blue3 transition-all duration-300 font-bold rounded-full shadow-md hover:scale-105"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                   onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=judy.essam@gmail.com')}
+                  >
+                    Contact Me
+                  </motion.button>
             </motion.div>
           </motion.div>
 
