@@ -40,7 +40,7 @@ const projectsData = [
         link : "https://github.com/theJudyEssam/React-Todo"
     },
     {
-        title: "PMhub"  ,
+        title: "Power and Machine Hub"  ,
         description: "An Express web-app that contains information on electrical machines, along with power efficiency and voltage regulation calculators",
         link : "https://github.com/theJudyEssam/Power-and-Machine-"
     },
@@ -59,11 +59,12 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-center mb-12"
-            >
-                <h1 className="text-4xl md:text-5xl font-bold text-Blue3 mb-4">Projects</h1>
+                className="text-center mb-12">
+
+
+                <h1 className="text-[36px] py-[2rem] text-Blue3 font-bold underline sm:p-[2rem] text-center">Projects</h1>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                    Here are some of my recent projects. Each one represents a unique challenge and learning experience.
+                    Here are some of my passion projects. Each one represents a unique challenge and learning experience.
                 </p>
             </motion.div>
 

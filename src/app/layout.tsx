@@ -27,8 +27,8 @@ const menuItems = [
 ]
 
 const socialLinks = [
-  { name: "GitHub", url: "https://github.com/yourusername" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/yourusername" }
+  { name: "GitHub", url: "https://github.com/theJudyEssam" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/judy-essam-a92081219/" }
 ];
 
 export const metadata: Metadata = {
@@ -70,7 +70,7 @@ export default function RootLayout({
                 <p className="text-Blue3">Alexandria, Egypt</p>
               </div>
 
-              {/* Quick Links */}
+            
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-Blue3">Quick Links (★‿★)</h3>
                 <ul className="space-y-2">

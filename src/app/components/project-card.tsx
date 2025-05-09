@@ -14,8 +14,8 @@ export default function Projectcard(props: projectProps) {
         <motion.div
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2 }}
-            className="h-full"
-        >
+            className="h-full">
+                
             <a href={props.link} target="_blank" rel="noopener noreferrer" className="block h-full">
                 <div className="relative overflow-hidden group h-full">
                     <div className="relative p-6 bg-white rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 h-full flex flex-col">

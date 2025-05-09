@@ -1,11 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion'
+import ContactFormPopup from './formpop'
+import { useState } from 'react'
 
 export default function Hero() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <section className="relative w-screen min-h-[90vh] overflow-hidden flex items-center">
-      {/* Animated Background */}
+      {/* background*/}
       <div className="absolute inset-0 bg-gradient-to-br from-Blue1/80 via-Blue2/70 to-Blue3/60">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
         <motion.div
@@ -21,7 +25,7 @@ export default function Hero() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-20">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Text Block */}
           <motion.div 
@@ -36,7 +40,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-4"
             >
-              <h2 className="text-xl sm:text-2xl text-Blue3 font-medium">Welcome to my portfolio</h2>
+              <h2 className="text-xl sm:text-2xl text-Blue3 font-medium">Welcome to my portfolio!</h2>
               <h1 className="text-5xl sm:text-7xl font-extrabold leading-tight">
                 Hello, I'm <span className="text-Blue3 relative inline-block">
                   Judy!
@@ -60,7 +64,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Buttons */}
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 pt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,6 +74,7 @@ export default function Hero() {
                 className="px-8 py-3 bg-white text-Blue3 hover:bg-gray-100 transition-all duration-300 font-bold rounded-full shadow-md hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setIsContactOpen(true)}
               >
                 Contact Me
               </motion.button>
@@ -84,7 +89,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Visual Element */}
-          <motion.div 
+          <motion.div
             className="relative h-[400px] hidden lg:block"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -142,6 +147,11 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <ContactFormPopup 
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </section>
   );
 }
