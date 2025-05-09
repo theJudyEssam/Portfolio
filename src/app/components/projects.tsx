@@ -1,6 +1,22 @@
-import Projectcard from "./project-card"
-import { Grid } from "@radix-ui/themes"
+'use client'
 
+import Projectcard from "./project-card"
+import { motion } from "framer-motion"
+
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+}
+
+const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+}
 
 const projectsData = [
     {
@@ -12,8 +28,7 @@ const projectsData = [
         title: "EduPortal", 
         description: "An interactive Educational Desktop app, built using .NET Windows Forms and SQL-Server. EduPortal helps teachers, students, and administrators in their day-to-day educational needs.",
         link : "https://github.com/theJudyEssam/Edu-Portal"
-    }
-    , 
+    }, 
     {
         title: "URL Shortening and Analytics API"  ,
         description: "A URL shortening service built using Express.JS, PostgresSQL, and Redis",
@@ -33,36 +48,42 @@ const projectsData = [
         title: "Thursday Thoughts"  ,
         description: "An Express web-app that contains A minimalistic Blog Website, showcasing the amazing works of Thursday's Thoughts",
         link : "https://github.com/theJudyEssam/Blog-Website"
-    },
-    {
-        title: "Node Voltage Calculator"  ,
-        description: "A web app that calculates the voltages in a DC circuit using the node analysis by inspection method.",
-        link : "https://github.com/theJudyEssam/Node-Voltage-Calculator"
-    },
-    
+    }
 ];
 
+export default function Projects() {
+    return (
+        <div className="bg-white">
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-12"
+            >
+                <h1 className="text-4xl md:text-5xl font-bold text-Blue3 mb-4">Projects</h1>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                    Here are some of my recent projects. Each one represents a unique challenge and learning experience.
+                </p>
+            </motion.div>
 
-
-
-export default function Projects(){
-
-    return(
-        <div>
-            <h1 className=" text-[36px]  py-[2rem] text-Blue3 font-bold underline sm:p-[2rem]">My Projects</h1>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
-                        {projectsData.map((project) => (
-                            <Projectcard
-                            key={project.title}
+            <motion.div 
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            >
+                {projectsData.map((project) => (
+                    <motion.div key={project.title} variants={item}>
+                        <Projectcard
                             title={project.title}
                             description={project.description}
                             link={project.link}
-                            />
-                        ))}
-                        </div>
-
+                        />
+                    </motion.div>
+                ))}
+            </motion.div>
         </div>
     )
-
 }

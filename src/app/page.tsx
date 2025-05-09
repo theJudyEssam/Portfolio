@@ -1,6 +1,5 @@
 import "@radix-ui/themes/styles.css";
 import { Theme, Separator } from "@radix-ui/themes";
-import Image from "next/image";
 import Hero from "./components/hero";
 import AboutMe from "./components/aboutme";
 import Projects from "./components/projects";
