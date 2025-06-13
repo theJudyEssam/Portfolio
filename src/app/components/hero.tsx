@@ -8,7 +8,7 @@ export default function Hero() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <section className="relative w-screen min-h-[90vh] overflow-hidden flex items-center">
+    <section className="relative w-full min-h-[90vh] overflow-hidden flex items-center">
       {/* background*/}
       <div className="absolute inset-0 bg-gradient-to-br from-Blue1/80 via-Blue2/70 to-Blue3/60">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
